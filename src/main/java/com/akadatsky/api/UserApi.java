@@ -28,9 +28,10 @@ public class UserApi {
 
     @POST
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-    public void addNewUser(@FormParam("name") String name,
+    public void addNewUser(@FormParam("firstName") String firstName,
+                           @FormParam("secondName") String secondName,
                            @FormParam("age") int age) {
-        User user = new User(name, age);
+        User user = new User(firstName,secondName, age);
 
         String path = System.getProperty("java.io.tmpdir");
         System.out.println("UserApiTag path: " + path);
@@ -69,14 +70,14 @@ public class UserApi {
     }
 
     @DELETE
-    @Path("/{name}")
+    @Path("/{secondName}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response removeUser(@PathParam("name") String name) {
-        if (UserDao.getInstance().remove(name)) {
-            String json = "{\"result\" : \"Removed user with name: " + name + "\"}";
+    public Response removeUser(@PathParam("secondName") String secondName) {
+        if (UserDao.getInstance().remove(secondName)) {
+            String json = "{\"result\" : \"Removed user with secondName: " + secondName + "\"}";
             return Response.status(Response.Status.OK).entity(json).build();
         } else {
-            String json = "{\"result\" : \"User not found: " + name + "\"}";
+            String json = "{\"result\" : \"User not found: " + secondName + "\"}";
             return Response.status(Response.Status.NOT_FOUND).entity(json).build();
         }
     }
