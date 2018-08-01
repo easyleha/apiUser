@@ -1,7 +1,7 @@
-package com.akadatsky.api;
+package com.company.api;
 
-import com.akadatsky.dao.UserDao;
-import com.akadatsky.model.User;
+import com.company.dao.UserDao;
+import com.company.model.User;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 

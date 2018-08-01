@@ -1,7 +1,7 @@
-package com.akadatsky.dao;
+package com.company.dao;
 
-import com.akadatsky.model.User;
-import com.akadatsky.model.UserList;
+import com.company.model.User;
+import com.company.model.UserList;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -12,8 +12,8 @@ import java.util.List;
 public class UserDao {
 
     private static UserDao instance;
-    private static String file = "C:\\Users\\User\\IdeaProjects\\userApiSample\\src\\main\\java\\com\\akadatsky\\dao\\text.txt";
-    File fileText = new File(file);
+    private static String path = "C:\\Users\\User\\IdeaProjects\\userApiSample\\src\\main\\java\\com\\company\\dao\\text.txt";
+    File fileText = new File(path);
     private Gson gson = new Gson();
 
     private List<User> users = new ArrayList<>();
@@ -35,10 +35,10 @@ public class UserDao {
 
     public UserList getUsersFromFile() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(
-                new FileInputStream(file), "UTF-8"));
+                new FileInputStream(path), "UTF-8"));
         String line = br.readLine();
         if (line != null) {
-            try (final Reader reader = new FileReader(file)) {
+            try (final Reader reader = new FileReader(path)) {
                 users = gson.fromJson(reader, new TypeToken<List<User>>() {
                 }.getType());
             } catch (FileNotFoundException e) {

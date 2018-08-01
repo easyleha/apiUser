@@ -1,4 +1,4 @@
-package com.akadatsky.model;
+package com.company.model;
 
 public class User {
 

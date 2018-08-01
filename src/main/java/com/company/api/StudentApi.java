@@ -1,4 +1,4 @@
-package com.akadatsky.api;
+package com.company.api;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;

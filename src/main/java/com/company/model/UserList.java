@@ -1,4 +1,4 @@
-package com.akadatsky.model;
+package com.company.model;
 
 import java.util.ArrayList;
 import java.util.List;
